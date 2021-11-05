@@ -21,11 +21,9 @@ class _LocationState extends State<Location> {
   }
 
   Future<void> getLocation() async {
-    // คำสั่งการดึงค่าตำแหน่ง ละติจูด และลองจิจูด
     var location = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high);
 
-    // แปลง ละติจูด กับ ลองจิจูดเป็นสถานที่
     var address = await placemarkFromCoordinates(13.736717, 100.523186);
     print(address);
 
